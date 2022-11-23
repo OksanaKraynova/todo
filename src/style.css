@@ -1,0 +1,235 @@
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrFJA.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLEj6V1s.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLCz7V1s.ttf) format('truetype');
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+a:focus,
+a:active {
+  outline: none;
+  font-family: inherit;
+}
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size: 100%;
+  font-family: 'Poppins', sans-serif;
+  background: #f6f6f6;
+}
+body::-webkit-scrollbar {
+  width: 3px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #fff;
+}
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+input,
+button,
+textarea {
+  font-family: inherit;
+  outline: none;
+  color: inherit;
+  border: none;
+  background-color: transparent;
+}
+button {
+  cursor: pointer;
+  background-color: transparent;
+}
+.container {
+  margin: 0 auto;
+  max-width: 1000px;
+}
+@media (max-width: 1050px) {
+  .container {
+    padding: 0 10px;
+  }
+}
+.title {
+  padding-top: 100px;
+}
+.title__main {
+  font-size: 42px;
+  margin-bottom: 18px;
+  font-weight: 600;
+}
+.title__counter {
+  color: #a9a9a9;
+  font-size: 24px;
+}
+.tasks {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.task {
+  background-color: #fff;
+  display: flex;
+  gap: 20px;
+  position: relative;
+  padding: 20px;
+  border-radius: 10px;
+  -webkit-box-shadow: -1px 3px 13px -5px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: -1px 3px 13px -5px rgba(34, 60, 80, 0.2);
+  box-shadow: -1px 3px 13px -5px rgba(34, 60, 80, 0.2);
+}
+@media (max-width: 768px) {
+  .task {
+    padding: 14px;
+  }
+}
+.task:hover .delete {
+  opacity: 1;
+}
+.task__delete {
+  position: absolute;
+  top: 20px;
+  right: 18px;
+  color: #a9a9a9;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+@media (max-width: 998px) {
+  .task__delete {
+    opacity: 1;
+    right: 14px;
+  }
+}
+.task__column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+@media (max-width: 768px) {
+  .task__column {
+    gap: 12px;
+  }
+}
+.task__main {
+  flex: 1;
+}
+.task__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.task__check {
+  border-radius: 6px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #a9a9a9;
+  margin-top: 2px;
+}
+.task__elasped {
+  color: #C41E3A;
+}
+.task__full {
+  background-color: #00CF00;
+  border: 2px solid #00CF00;
+}
+.task__title {
+  font-size: 24px;
+}
+.task__end {
+  text-decoration: line-through;
+}
+.task__context {
+  color: #a9a9a9;
+  font-size: 20px;
+}
+.task__files {
+  color: #a9a9a9;
+  display: flex;
+  align-items: center;
+}
+.task__data {
+  font-size: 18px;
+  color: #a9a9a9;
+}
+.task__clip {
+  margin-right: 8px;
+}
+.task__files img {
+  width: 100px;
+  height: 100px;
+}
+@media (max-width: 768px) {
+  .task__files img {
+    width: 60px;
+    height: 60px;
+  }
+}
+.add {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.add__icon {
+  background-color: #a9a9a9;
+  height: 30px;
+  width: 30px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.add textarea {
+  height: 40px;
+  resize: none;
+}
+.add__input {
+  font-size: 20px;
+  color: #a9a9a9;
+}
+.add__plus {
+  color: #fff;
+}
+.add__date {
+  width: 150px;
+}
+.add__btn {
+  color: #a9a9a9;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
