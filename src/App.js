@@ -7,12 +7,14 @@ import { query, collection, onSnapshot, updateDoc, doc, addDoc, deleteDoc } from
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage'
 
 function App() {
+  
   const [todos, setTodos] = useState([])
   const [title, setTitle] = useState('')
   const [date, setDate] = useState('')
   const [description, setDescription] = useState('')
   const [file, setFile] = useState(null)
 
+  // Получение файла загрузок и добавление его в storage Firebase
   const addFile = async e => {
     const file = e.target.files[0]
     const storageRef = ref(storage, 'files/' + file.name)
@@ -31,7 +33,7 @@ function App() {
     )
   }
   
-
+// Создание задачи и добавление ее в базу данных firebase
   const createTodo = async e => {
     e.preventDefault()
     if (title.trim().length === 0 || description.trim().length === 0 || !date) {
@@ -52,6 +54,7 @@ function App() {
     }
   }
 
+  //Чтение массива задач из firebase
   useEffect(() => {
     const res = query(collection(db, 'todos'))
     const arr = onSnapshot(res, querySnapshot => {
@@ -63,13 +66,15 @@ function App() {
     })
     return () => arr()
   }, [])
-
+  
+  //Изменение состояния выполнения задачи
   const toggleComplete = async (todo) => {
     await updateDoc(doc(db, 'todos', todo.id), {
       completed: !todo.completed
     })
   }
 
+  //Удаление задачи
   const deleteTodo = async (id) => {
     await deleteDoc(doc(db, 'todos', id))
   }
